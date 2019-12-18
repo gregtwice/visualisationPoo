@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visu</title>
+    <style>
+        #canvas-wrapper {
+            float: left;
+        }
+
+        #toolbar {
+            float: right;
+            top: 30px;
+            right: 0;
+            position: fixed;
+            /*position: -webkit-sticky;*/
+        }
+
+        canvas {
+            border: 1px solid #000;
+            /*margin-left: -500px;*/
+        }
+    </style>
+</head>
+<body>
+
+<div id="canvas-wrapper">
+    <canvas height="3000" width="1440" id="root"></canvas>
+</div>
+<div id="toolbar">
+    <div class="form">
+        <div>
+            <label for="solutionSelect">Numéro de la solution</label>
+            <select name="solutionID" id="solutionSelect"></select>
+        </div>
+        <div>
+            <label for="taskeight">Hauteur d'une tache (px)</label>
+            <input type="number" name="taskheigt" id="taskeight" value="20" min="0" max="100" autocomplete="off">
+        </div>
+        <div>
+            <label for="taskcolor">Couleur tache</label>
+            <input type="color" name="taskcolor" id="taskcolor" autocomplete="off" value="#a05000">
+        </div>
+        <div>
+            <label for="minDuration">Durée Minimale shift</label>
+            <input value="120" type="number" name="minDuration" id="minDuration">
+        </div>
+        <div>
+            <label for="maxDuration">Durée Maximala shift</label>
+            <input value="210" type="number" name="maxDuration" id="maxDuration">
+        </div>
+    </div>
+</div>
+
+<script src="Graph.js"></script>
+<script src="Instance1.js"></script>
+<!--<script src="Instance1-sorted.js"></script>-->
+<script>
+    "use strict";
+    // root.height = 1000;
+    let graph = new Graph("#67c531", 20, solutions);
+    graph.printSolution(0)
+
+    // printSolution(0);
+</script>
+</body>
+</html>
